@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --deep-blue: rgb(11, 19, 43);
+  --space-blue: rgb(28, 37, 65);
+  --grey: rgb(58, 80, 107);
+  --blue: rgb(91, 192, 190);
+  --white: rgb(255, 255, 255);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey);
+  font-size: 4.2vh;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.logo {
+  height: 90%;
+}
+
+.conteiner {
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+}
+
+.data {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.budget {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dataInputs {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.analysis {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.statistic {
+  width: 90%;
+  height: 70%;
+  display: flex;
+  border: 1px solid black;
+}
+
+.facts {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  border: 1px solid black;
+}
+
+.budget-input {
+  width: 70%;
+  height: 60%;
+  display: flex;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  width: 20%;
+  height: 60%;
+}
+
+.input-conteriner {
+  height: 11%;
+  width: 95%;
+  display: flex;
+}
+
+.data-conteriner {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.name {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vh;
+}
+
+.input {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  
+}
+
+.button-conteriner {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.data-button {
+  width: 70%;
+  height: 60%;
+  display: flex;
+  margin-bottom: 2%;
+  
+}
