@@ -24,6 +24,8 @@
         <div class="budget">
           <input type="text" class="budget-input" />
           <button class="button budget-accpet">DODAJ</button>
+          <p class="final-budget"></p>
+          <button class="button cancle-final-button">WRÓĆ</button>
         </div>
         <div class="dataInputs">
           <div class="input-conteriner rent">
@@ -32,75 +34,96 @@
               <input type="text" class="input rent-input" />
             </div>
             <div class="button-conteriner">
-              <button class="data-button rent-button"></button>
+              <div class="sumMoney rent-money">0</div>
+              <button class="data-button rent-button">DODAJ</button>
             </div>
           </div>
 
-          <div class="input-conteriner rent">
-            <div class="data-conteriner rent-conteiner">
-              <p class="name rent-name">Opłaty związane z mieszkanie</p>
-              <input type="text" class="input rent-input" />
+          <div class="input-conteriner eat">
+            <div class="data-conteriner eat-conteiner">
+              <p class="name eat-name">Jedzenie</p>
+              <input type="text" class="input eat-input" />
             </div>
             <div class="button-conteriner">
-              <button class="data-button rent-button"></button>
+              <div class="sumMoney eat-money">siema</div>
+              <button class="data-button eat-button">DODAJ</button>
             </div>
           </div>
 
-          <div class="input-conteriner rent">
-            <div class="data-conteriner rent-conteiner">
-              <p class="name rent-name">Opłaty związane z mieszkanie</p>
-              <input type="text" class="input rent-input" />
+          <div class="input-conteriner transport">
+            <div class="data-conteriner transport-conteiner">
+              <p class="name transport-name">Transport</p>
+              <input type="text" class="input transport-input" />
             </div>
             <div class="button-conteriner">
-              <button class="data-button rent-button"></button>
+              <div class="sumMoney transport-money">siema</div>
+              <button class="data-button transport-button">DODAJ</button>
             </div>
           </div>
 
-          <div class="input-conteriner rent">
-            <div class="data-conteriner rent-conteiner">
-              <p class="name rent-name">Opłaty związane z mieszkanie</p>
-              <input type="text" class="input rent-input" />
+          <div class="input-conteriner cloth">
+            <div class="data-conteriner cloth-conteiner">
+              <p class="name cloth-name">Ubrania</p>
+              <input type="text" class="input cloth-input" />
             </div>
             <div class="button-conteriner">
-              <button class="data-button rent-button"></button>
+              <div class="sumMoney cloth-money">siema</div>
+              <button class="data-button cloth-button">DODAJ</button>
             </div>
           </div>
 
-          <div class="input-conteriner rent">
-            <div class="data-conteriner rent-conteiner">
-              <p class="name rent-name">Opłaty związane z mieszkanie</p>
-              <input type="text" class="input rent-input" />
+          <div class="input-conteriner homeThings">
+            <div class="data-conteriner homeThings-conteiner">
+              <p class="name homeThings-name">Rzeczy do domu</p>
+              <input type="text" class="input homeThings-input" />
             </div>
             <div class="button-conteriner">
-              <button class="data-button rent-button"></button>
+              <div class="sumMoney homeThings-money">siema</div>
+              <button class="data-button homeThings-button">DODAJ</button>
             </div>
           </div>
 
-          <div class="input-conteriner rent">
-            <div class="data-conteriner rent-conteiner">
-              <p class="name rent-name">Opłaty związane z mieszkanie</p>
-              <input type="text" class="input rent-input" />
+          <div class="input-conteriner fun">
+            <div class="data-conteriner fun-conteiner">
+              <p class="name fun-name">Przyjemności</p>
+              <input type="text" class="input fun-input" />
             </div>
             <div class="button-conteriner">
-              <button class="data-button rent-button"></button>
+              <div class="sumMoney fun-money">siema</div>
+              <button class="data-button fun-button">DODAJ</button>
             </div>
           </div>
 
-          <div class="input-conteriner rent">
-            <div class="data-conteriner rent-conteiner">
-              <p class="name rent-name">Opłaty związane z mieszkanie</p>
-              <input type="text" class="input rent-input" />
+          <div class="input-conteriner another">
+            <div class="data-conteriner another-conteiner">
+              <p class="name another-name">Inne wydatki</p>
+              <input type="text" class="input another-input" />
             </div>
             <div class="button-conteriner">
-              <button class="data-button rent-button"></button>
+              <div class="sumMoney another-money">siema</div>
+              <button class="data-button another-button">DODAJ</button>
             </div>
           </div>
         </div>
       </div>
 
       <div class="analysis">
-        <div class="statistic"></div>
-        <div class="facts"></div>
+        <div class="statistic">
+          <div class="column rent-column">
+            <p class="column-text">Opłaty związane z mieszkanie</p>
+          </div>
+          <div class="column eat-column"><p class="column-text"></p></div>
+          <div class="column transport-column"><p class="column-text"></p></div>
+          <div class="column clothes-column"><p class="column-text"></p></div>
+          <div class="column homes-things-column">
+            <p class="column-text"></p>
+          </div>
+          <div class="column fun-column"><p class="column-text"></p></div>
+          <div class="column another-column"><p class="column-text"></p></div>
+        </div>
+        <div class="facts">
+          <button class="calculate">OBLICZ!</button>
+        </div>
       </div>
     </main>
 
