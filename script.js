@@ -44,8 +44,8 @@ let funMoney;
 //antoher
 let anotherInput;
 let anotherButton;
-let antoherColumn;
-let antoherMoney;
+let anotherColumn;
+let anotherMoney;
 
 //columns
 
@@ -59,7 +59,21 @@ let transportValue;
 let clothValue;
 let homeThingsValue;
 let funValue;
-let antoher;
+let another;
+
+//facts
+let calculateButton;
+let facts1;
+let facts2;
+let facts3;
+let againButton;
+let fact;
+let informationConteiner;
+let buttonAgainConteriner;
+
+//another
+
+let finalBudgetValue;
 
 const main = () => {
   allElements();
@@ -72,6 +86,7 @@ const allElements = () => {
   budgetButton = document.querySelector('.budget-accpet');
   cancleButton = document.querySelector('.cancle-final-button');
   finalBudget = document.querySelector('.final-budget');
+  finalBudgetValue = document.querySelector('.final-budget-value');
 
   //rent
   rentInput = document.querySelector('.rent-input');
@@ -95,13 +110,13 @@ const allElements = () => {
   //cloth
   clothInput = document.querySelector('.cloth-input');
   clothButton = document.querySelector('.cloth-button');
-  clothColumn = document.querySelector('.cloth-column');
+  clothColumn = document.querySelector('.clothes-column');
   clothMoney = document.querySelector('.cloth-money');
 
   //homeThings
   homeThingsInput = document.querySelector('.homeThings-input');
   homeThingsButton = document.querySelector('.homeThings-button');
-  homeThingsColumn = document.querySelector('.homeThings-column');
+  homeThingsColumn = document.querySelector('.homes-things-column');
   homeThingsMoney = document.querySelector('.homeThings-money');
 
   //fun
@@ -113,8 +128,18 @@ const allElements = () => {
   //antoher
   anotherInput = document.querySelector('.another-input');
   anotherButton = document.querySelector('.another-button');
-  antoherColumn = document.querySelector('.another-column');
+  anotherColumn = document.querySelector('.another-column');
   anotherMoney = document.querySelector('.another-money');
+
+  //facts
+  calculateButton = document.querySelector('.calculate');
+  facts1 = document.querySelector('.facts1');
+  facts2 = document.querySelector('.facts2');
+  facts3 = document.querySelector('.facts3');
+  fact = document.querySelector('.fact');
+  againButton = document.querySelector('.again-button');
+  informationConteiner = document.querySelector('.information-conteiner');
+  buttonAgainConteriner = document.querySelector('.button-again-conteriner');
 
   //antoher
   columnText = document.querySelector('.column-text');
@@ -122,28 +147,144 @@ const allElements = () => {
 
 const allEvents = () => {
   budgetButton.addEventListener('click', addBudget);
-  rentButton.addEventListener('click', rentAdd);
+  rentButton.addEventListener('click', function () {
+    moneyADD(rentInput, rentMoney);
+  });
+  eatButton.addEventListener('click', function () {
+    moneyADD(eatInput, eatMoney);
+  });
+  transportButton.addEventListener('click', function () {
+    moneyADD(transportInput, transportMoney);
+  });
+  clothButton.addEventListener('click', function () {
+    moneyADD(clothInput, clothMoney);
+  });
+  homeThingsButton.addEventListener('click', function () {
+    moneyADD(homeThingsInput, homeThingsMoney);
+  });
+  funButton.addEventListener('click', function () {
+    moneyADD(funInput, funMoney);
+  });
+  anotherButton.addEventListener('click', function () {
+    moneyADD(anotherInput, anotherMoney);
+  });
+  calculateButton.addEventListener('click', calculateBudget);
+  cancleButton.addEventListener('click', cancle);
 };
 
 const addBudget = () => {
   budgetValue = budgetInput.value;
+  if (budgetValue !== '') {
+    budgetInput.style.display = 'none';
+    budgetButton.style.display = 'none';
 
-  budgetInput.style.display = 'none';
-  budgetButton.style.display = 'none';
+    finalBudget.textContent = 'Twój budżet to:';
+    finalBudgetValue.textContent = budgetValue + ' zł';
 
-  finalBudget.textContent = 'Twój budżet to: ' + budgetValue + ' zł';
-  finalBudget.style.display = 'flex';
-  cancleButton.style.display = 'flex';
+    finalBudgetValue.style.display = 'flex';
+    finalBudget.style.display = 'flex';
+    cancleButton.style.display = 'flex';
+  } else {
+    alert('Podaj wartość budżetu');
+  }
 };
 
-const rentAdd = () => {
-  rentValue = parseInt(rentInput.value);
-  const rentMoneyToInt = parseInt(rentMoney.textContent);
+function cancle() {
+  budgetValue = budgetInput.value;
 
-  const suma = rentValue + rentMoneyToInt;
-  rentMoney.textContent = suma;
-  console.log(suma);
-};
+  finalBudgetValue.style.display = 'none';
+  finalBudget.style.display = 'none';
+  cancleButton.style.display = 'none';
+
+  calculateButton.style.display = 'flex';
+  informationConteiner.style.display = 'none';
+  buttonAgainConteriner.style.display = 'none';
+  facts1.style.display = 'none';
+  facts2.style.display = 'none';
+  facts3.style.display = 'none';
+  againButton.style.display = 'none';
+
+  finalBudget.textContent = '';
+  finalBudgetValue.textContent = '';
+
+  budgetInput.style.display = 'flex';
+  budgetButton.style.display = 'flex';
+  budgetInput.value = '';
+  budgetInput.focus();
+}
+
+function moneyADD(input, moneyText) {
+  value = parseInt(input.value);
+  const inputCheck = input.value;
+  const MoneyToInt = parseInt(moneyText.textContent);
+  if (inputCheck !== 0 && inputCheck !== '') {
+    const suma = value + MoneyToInt;
+    moneyText.textContent = suma + ' zł';
+    input.value = '';
+    input.focus();
+  } else {
+    alert('Musisz wpisać kwote');
+    input.focus();
+  }
+}
+
+function calculateBudget() {
+  if (finalBudget.textContent != 0 && finalBudget != '') {
+    rentColumn.style.height =
+      (parseInt(rentMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 +
+      '%';
+
+    calculateButton.style.display = 'none';
+
+    eatColumn.style.height =
+      (parseInt(eatMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 +
+      '%';
+
+    transportColumn.style.height =
+      (parseInt(transportMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 +
+      '%';
+
+    clothColumn.style.height =
+      (parseInt(clothMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 +
+      '%';
+
+    homeThingsColumn.style.height =
+      (parseInt(homeThingsMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 +
+      '%';
+
+    funColumn.style.height =
+      (parseInt(funMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 +
+      '%';
+
+    anotherColumn.style.height =
+      (parseInt(anotherMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 +
+      '%';
+
+    calculateButton.style.display = 'none';
+    informationConteiner.style.display = 'flex';
+    buttonAgainConteriner.style.display = 'flex';
+    facts1.style.display = 'flex';
+    facts2.style.display = 'flex';
+    facts3.style.display = 'flex';
+    againButton.style.display = 'flex';
+  } else {
+    alert('Musisz podać swój budżet!');
+  }
+}
 
 const statisicUpdate = () => {};
 

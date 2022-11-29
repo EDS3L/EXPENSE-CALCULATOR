@@ -42,14 +42,24 @@ header {
   margin-top: 2%;
 }
 
-.data {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+/* another */
 
-  justify-content: center;
+.input:focus {
+  outline: none;
 }
+
+.button {
+  width: 20%;
+  height: 60%;
+}
+
+.input {
+  width: 90%;
+  height: 60%;
+  display: flex;
+}
+
+/* budget */
 
 .budget {
   width: 90%;
@@ -61,6 +71,49 @@ header {
   align-items: center;
 }
 
+.budget-input {
+  width: 70%;
+  height: 60%;
+  display: flex;
+}
+
+.budget-accpet {
+  width: 20%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-budget {
+  display: none;
+  font-size: 2.2vw;
+}
+
+.final-budget-value {
+  display: none;
+  font-size: 2vw;
+}
+
+/* data */
+
+.data {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.data-conteriner {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .dataInputs {
   width: 90%;
   height: 80%;
@@ -69,6 +122,54 @@ header {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.data-button {
+  width: 70%;
+  height: 60%;
+  display: flex;
+  margin-bottom: 1.1%;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.button-conteriner {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.input-conteriner {
+  height: 11%;
+  width: 95%;
+  display: flex;
+}
+
+.name {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vh;
+}
+
+.sumMoney {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* analysis */
 
 .analysis {
   width: 50%;
@@ -85,88 +186,6 @@ header {
   display: flex;
   border: 1px solid black;
   justify-content: space-around;
-}
-
-.facts {
-  width: 90%;
-  height: 20%;
-  display: flex;
-  border: 1px solid black;
-  justify-content: center;
-  align-items: center;
-}
-
-.budget-input {
-  width: 70%;
-  height: 60%;
-  display: flex;
-}
-
-.input:focus {
-  outline: none;
-}
-
-.button {
-  width: 20%;
-  height: 60%;
-}
-
-.cancle-final-button {
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.final-budget {
-  display: none;
-  font-size: 2.2vw;
-}
-
-.input-conteriner {
-  height: 11%;
-  width: 95%;
-  display: flex;
-}
-
-.data-conteriner {
-  width: 70%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.name {
-  width: 100%;
-  height: 35%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5vh;
-}
-
-.input {
-  width: 90%;
-  height: 60%;
-  display: flex;
-}
-
-.button-conteriner {
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.data-button {
-  width: 70%;
-  height: 60%;
-  display: flex;
-  margin-bottom: 1.1%;
-  justify-content: center;
-  align-items: center;
 }
 
 .column {
@@ -187,6 +206,23 @@ header {
   font-size: 15%;
 }
 
+/* facts */
+
+.facts {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancle-final-button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
 .calculate {
   width: 50%;
   height: 30%;
@@ -195,9 +231,33 @@ header {
   justify-content: center;
 }
 
-.sumMoney {
-  width: 100%;
-  display: flex;
-  align-items: center;
+.information-conteiner {
+  width: 70%;
+  height: 100%;
+  display: none;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button-again-conteriner {
+  width: 30%;
+  height: 100%;
+  display: none;
+  border-left: 1px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.again-button {
+  width: 70%;
+  height: 30%;
+}
+
+.fact {
+  width: 100%;
+  height: 33%;
+  display: none;
+  align-items: center;
+  margin-left: 2%;
 }

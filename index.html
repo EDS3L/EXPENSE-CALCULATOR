@@ -22,16 +22,18 @@
     <main class="conteiner">
       <div class="data">
         <div class="budget">
-          <input type="text" class="budget-input" />
+          <input type="number" class="budget-input" />
           <button class="button budget-accpet">DODAJ</button>
           <p class="final-budget"></p>
+          <p class="final-budget-value"></p>
+
           <button class="button cancle-final-button">WRÓĆ</button>
         </div>
         <div class="dataInputs">
           <div class="input-conteriner rent">
             <div class="data-conteriner rent-conteiner">
               <p class="name rent-name">Opłaty związane z mieszkanie</p>
-              <input type="text" class="input rent-input" />
+              <input type="number" class="input rent-input" />
             </div>
             <div class="button-conteriner">
               <div class="sumMoney rent-money">0</div>
@@ -42,10 +44,10 @@
           <div class="input-conteriner eat">
             <div class="data-conteriner eat-conteiner">
               <p class="name eat-name">Jedzenie</p>
-              <input type="text" class="input eat-input" />
+              <input type="number" class="input eat-input" />
             </div>
             <div class="button-conteriner">
-              <div class="sumMoney eat-money">siema</div>
+              <div class="sumMoney eat-money">0</div>
               <button class="data-button eat-button">DODAJ</button>
             </div>
           </div>
@@ -53,10 +55,10 @@
           <div class="input-conteriner transport">
             <div class="data-conteriner transport-conteiner">
               <p class="name transport-name">Transport</p>
-              <input type="text" class="input transport-input" />
+              <input type="number" class="input transport-input" />
             </div>
             <div class="button-conteriner">
-              <div class="sumMoney transport-money">siema</div>
+              <div class="sumMoney transport-money">0</div>
               <button class="data-button transport-button">DODAJ</button>
             </div>
           </div>
@@ -64,10 +66,10 @@
           <div class="input-conteriner cloth">
             <div class="data-conteriner cloth-conteiner">
               <p class="name cloth-name">Ubrania</p>
-              <input type="text" class="input cloth-input" />
+              <input type="number" class="input cloth-input" />
             </div>
             <div class="button-conteriner">
-              <div class="sumMoney cloth-money">siema</div>
+              <div class="sumMoney cloth-money">0</div>
               <button class="data-button cloth-button">DODAJ</button>
             </div>
           </div>
@@ -75,10 +77,10 @@
           <div class="input-conteriner homeThings">
             <div class="data-conteriner homeThings-conteiner">
               <p class="name homeThings-name">Rzeczy do domu</p>
-              <input type="text" class="input homeThings-input" />
+              <input type="number" class="input homeThings-input" />
             </div>
             <div class="button-conteriner">
-              <div class="sumMoney homeThings-money">siema</div>
+              <div class="sumMoney homeThings-money">0</div>
               <button class="data-button homeThings-button">DODAJ</button>
             </div>
           </div>
@@ -86,10 +88,10 @@
           <div class="input-conteriner fun">
             <div class="data-conteriner fun-conteiner">
               <p class="name fun-name">Przyjemności</p>
-              <input type="text" class="input fun-input" />
+              <input type="number" class="input fun-input" />
             </div>
             <div class="button-conteriner">
-              <div class="sumMoney fun-money">siema</div>
+              <div class="sumMoney fun-money">0</div>
               <button class="data-button fun-button">DODAJ</button>
             </div>
           </div>
@@ -97,10 +99,10 @@
           <div class="input-conteriner another">
             <div class="data-conteriner another-conteiner">
               <p class="name another-name">Inne wydatki</p>
-              <input type="text" class="input another-input" />
+              <input type="number" class="input another-input" />
             </div>
             <div class="button-conteriner">
-              <div class="sumMoney another-money">siema</div>
+              <div class="sumMoney another-money">0</div>
               <button class="data-button another-button">DODAJ</button>
             </div>
           </div>
@@ -123,6 +125,14 @@
         </div>
         <div class="facts">
           <button class="calculate">OBLICZ!</button>
+          <div class="information-conteiner">
+            <p class="fact facts1">c</p>
+            <p class="fact facts2">v</p>
+            <p class="fact facts3">a</p>
+          </div>
+          <div class="button-again-conteriner">
+            <button class="again-button">OD NOWA!</button>
+          </div>
         </div>
       </div>
     </main>
