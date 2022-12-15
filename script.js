@@ -70,10 +70,20 @@ let againButton;
 let fact;
 let informationConteiner;
 let buttonAgainConteriner;
+let procent;
 
 //another
+let rentPro;
+let eatPro;
+let transPro;
+let clothPro;
+let thingsPro;
+let funPro;
+let anotherPro;
 
 let finalBudgetValue;
+
+let allSumMoney;
 
 const main = () => {
   allElements();
@@ -140,9 +150,20 @@ const allElements = () => {
   againButton = document.querySelector('.again-button');
   informationConteiner = document.querySelector('.information-conteiner');
   buttonAgainConteriner = document.querySelector('.button-again-conteriner');
+  procent = document.querySelectorAll('.procent');
 
   //antoher
-  columnText = document.querySelector('.column-text');
+  columnText = document.querySelectorAll('.column-text');
+
+  rentPro = document.querySelector('.rentPro');
+  eatPro = document.querySelector('.eatPro');
+  transPro = document.querySelector('.transPro');
+  clothPro = document.querySelector('.clothPro');
+  thingsPro = document.querySelector('.thingsPro');
+  funPro = document.querySelector('.funPro');
+  anotherPro = document.querySelector('.anotherPro');
+
+  allSumMoney = document.querySelectorAll('.sumMoney');
 };
 
 const allEvents = () => {
@@ -165,11 +186,66 @@ const allEvents = () => {
   funButton.addEventListener('click', function () {
     moneyADD(funInput, funMoney);
   });
-  anotherButton.addEventListener('click', function () {
+  anotherButton.addEventListener('click', function (e) {
     moneyADD(anotherInput, anotherMoney);
   });
-  calculateButton.addEventListener('click', calculateBudget);
-  cancleButton.addEventListener('click', cancle);
+  budgetInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      addBudget();
+    }
+  });
+  rentInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      moneyADD(rentInput, rentMoney);
+      rentInput.focus();
+    }
+  });
+  eatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      moneyADD(eatInput, eatMoney);
+      eatInput.focus();
+    }
+  });
+  transportInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      moneyADD(transportInput, transportMoney);
+      transportInput.focus();
+    }
+  });
+  clothInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      moneyADD(clothInput, clothMoney);
+      clothInput.focus();
+    }
+  });
+  homeThingsInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      moneyADD(homeThingsInput, homeThingsMoney);
+      homeThingsInput.focus();
+    }
+  });
+  funInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      moneyADD(funInput, funMoney);
+      funInput.focus();
+    }
+  });
+  anotherInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      moneyADD(anotherInput, anotherMoney);
+      anotherInput.focus();
+    }
+  });
+  calculateButton.addEventListener('click', () => {
+    calculateBudget();
+    for (const text of columnText) {
+      text.style.display = 'flex';
+    }
+    statisicUpdate();
+    suma();
+  });
+  cancleButton.addEventListener('click', back);
+  againButton.addEventListener('click', reset);
 };
 
 const addBudget = () => {
@@ -189,28 +265,24 @@ const addBudget = () => {
   }
 };
 
-function cancle() {
+function back() {
   budgetValue = budgetInput.value;
 
   finalBudgetValue.style.display = 'none';
   finalBudget.style.display = 'none';
   cancleButton.style.display = 'none';
 
-  calculateButton.style.display = 'flex';
-  informationConteiner.style.display = 'none';
-  buttonAgainConteriner.style.display = 'none';
-  facts1.style.display = 'none';
-  facts2.style.display = 'none';
-  facts3.style.display = 'none';
-  againButton.style.display = 'none';
-
   finalBudget.textContent = '';
   finalBudgetValue.textContent = '';
 
   budgetInput.style.display = 'flex';
   budgetButton.style.display = 'flex';
-  budgetInput.value = '';
+  budgetInput.value = budgetValue;
   budgetInput.focus();
+}
+
+function reset() {
+  location.reload(true);
 }
 
 function moneyADD(input, moneyText) {
@@ -286,6 +358,70 @@ function calculateBudget() {
   }
 }
 
-const statisicUpdate = () => {};
+const statisicUpdate = () => {
+  for (const per of procent) {
+    per.style.display = 'flex';
+  }
+
+  rentPro.textContent = Math.round(parseInt(rentColumn.style.height)) + '%';
+  eatPro.textContent = Math.round(parseInt(eatColumn.style.height)) + '%';
+  transPro.textContent =
+    Math.round(parseInt(transportColumn.style.height)) + '%';
+  clothPro.textContent = Math.round(parseInt(clothColumn.style.height)) + '%';
+  thingsPro.textContent =
+    Math.round(parseInt(homeThingsColumn.style.height)) + '%';
+  funPro.textContent = Math.round(parseInt(funColumn.style.height)) + '%';
+  anotherPro.textContent =
+    Math.round(parseInt(anotherColumn.style.height)) + '%';
+};
+
+const suma = () => {
+  const rentCash = parseInt(rentMoney.textContent);
+  const eatCash = parseInt(eatMoney.textContent);
+  const transportCash = parseInt(transportMoney.textContent);
+  const clothCash = parseInt(clothMoney.textContent);
+  const thingsCash = parseInt(homeThingsMoney.textContent);
+  const funCash = parseInt(funMoney.textContent);
+  const anotherCash = parseInt(anotherMoney.textContent);
+
+  const allCash =
+    rentCash +
+    eatCash +
+    transportCash +
+    clothCash +
+    thingsCash +
+    funCash +
+    anotherCash;
+
+  const max = Math.max(
+    rentCash,
+    eatCash,
+    transportCash,
+    clothCash,
+    thingsCash,
+    funCash,
+    anotherCash
+  );
+
+  for (var i = 0; i < allSumMoney.length; i++) {
+    var div = allSumMoney[i];
+    if (parseInt(div.textContent) == max) {
+      const name =
+        div.closest('.button-conteriner').parentNode.children[0].children[0]
+          .textContent;
+
+      const difference = parseInt(finalBudgetValue.textContent) - allCash;
+      const procentOfBudget = Math.round(
+        (allCash / parseInt(finalBudgetValue.textContent)) * 100
+      );
+
+      facts1.textContent = `Największa cześć twojego budżetu to: ${name}`;
+
+      facts2.textContent = `W tym miesiący udało ci sie zaoszczędzi: ${difference} zł`;
+
+      facts3.textContent = `Wszystkie wydatki to : ${procentOfBudget} % twojego budżetu`;
+    }
+  }
+};
 
 document.addEventListener('DOMContentLoaded', main);
