@@ -72,6 +72,14 @@ let informationConteiner;
 let buttonAgainConteriner;
 let procent;
 
+let rentProcent;
+let eatProcent;
+let transportProcent;
+let clothProcent;
+let thingsProcent;
+let funProcent;
+let anotherProcent;
+
 //another
 let rentPro;
 let eatPro;
@@ -302,49 +310,153 @@ function moneyADD(input, moneyText) {
 
 function calculateBudget() {
   if (finalBudget.textContent != 0 && finalBudget != '') {
-    rentColumn.style.height =
-      (parseInt(rentMoney.textContent) /
-        parseInt(finalBudgetValue.textContent)) *
-        100 +
-      '%';
-
     calculateButton.style.display = 'none';
 
-    eatColumn.style.height =
+    //rent
+    if (
+      (parseInt(rentMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100 <=
+      100
+    ) {
+      rentColumn.style.height =
+        (parseInt(rentMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+          100 +
+        '%';
+    } else {
+      rentColumn.style.height = 100 + '%';
+      rentProcent =
+        (parseInt(rentMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+        100;
+    }
+
+    //eat
+
+    if (
       (parseInt(eatMoney.textContent) /
         parseInt(finalBudgetValue.textContent)) *
-        100 +
-      '%';
+        100 <=
+      100
+    ) {
+      eatColumn.style.height =
+        (parseInt(eatMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+          100 +
+        '%';
+    } else {
+      eatColumn.style.height = 100 + '%';
+      eatProcent =
+        (parseInt(eatMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+        100;
+    }
 
-    transportColumn.style.height =
+    //transport
+
+    if (
       (parseInt(transportMoney.textContent) /
         parseInt(finalBudgetValue.textContent)) *
-        100 +
-      '%';
+        100 <=
+      100
+    ) {
+      transportColumn.style.height =
+        (parseInt(transportMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+          100 +
+        '%';
+    } else {
+      transportColumn.style.height = 100 + '%';
+      transportProcent =
+        (parseInt(transportMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+        100;
+    }
 
-    clothColumn.style.height =
+    //cloth
+
+    if (
       (parseInt(clothMoney.textContent) /
         parseInt(finalBudgetValue.textContent)) *
-        100 +
-      '%';
+        100 <=
+      100
+    ) {
+      clothColumn.style.height =
+        (parseInt(clothMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+          100 +
+        '%';
+    } else {
+      clothColumn.style.height = 100 + '%';
+      clothProcent =
+        (parseInt(clothMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+        100;
+    }
 
-    homeThingsColumn.style.height =
+    //homeThings
+
+    if (
       (parseInt(homeThingsMoney.textContent) /
         parseInt(finalBudgetValue.textContent)) *
-        100 +
-      '%';
+        100 <=
+      100
+    ) {
+      homeThingsColumn.style.height =
+        (parseInt(homeThingsMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+          100 +
+        '%';
+    } else {
+      homeThingsColumn.style.height = 100 + '%';
+      thingsProcent =
+        (parseInt(homeThingsMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+        100;
+    }
 
-    funColumn.style.height =
+    //fun
+
+    if (
       (parseInt(funMoney.textContent) /
         parseInt(finalBudgetValue.textContent)) *
-        100 +
-      '%';
+        100 <=
+      100
+    ) {
+      funColumn.style.height =
+        (parseInt(funMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+          100 +
+        '%';
+    } else {
+      funColumn.style.height = 100 + '%';
+      funProcent =
+        (parseInt(funMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+        100;
+    }
 
-    anotherColumn.style.height =
+    //another
+
+    if (
       (parseInt(anotherMoney.textContent) /
         parseInt(finalBudgetValue.textContent)) *
-        100 +
-      '%';
+        100 <=
+      100
+    ) {
+      anotherColumn.style.height =
+        (parseInt(anotherMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+          100 +
+        '%';
+    } else {
+      anotherColumn.style.height = 100 + '%';
+      anotherProcent =
+        (parseInt(anotherMoney.textContent) /
+          parseInt(finalBudgetValue.textContent)) *
+        100;
+    }
 
     calculateButton.style.display = 'none';
     informationConteiner.style.display = 'flex';
@@ -363,16 +475,48 @@ const statisicUpdate = () => {
     per.style.display = 'flex';
   }
 
-  rentPro.textContent = Math.round(parseInt(rentColumn.style.height)) + '%';
-  eatPro.textContent = Math.round(parseInt(eatColumn.style.height)) + '%';
+  rentPro.textContent =
+    Math.round(
+      (parseInt(rentMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100
+    ) + '%';
+  eatPro.textContent =
+    Math.round(
+      (parseInt(eatMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100
+    ) + '%';
   transPro.textContent =
-    Math.round(parseInt(transportColumn.style.height)) + '%';
-  clothPro.textContent = Math.round(parseInt(clothColumn.style.height)) + '%';
+    Math.round(
+      (parseInt(transportMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100
+    ) + '%';
+  clothPro.textContent =
+    Math.round(
+      (parseInt(clothMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100
+    ) + '%';
   thingsPro.textContent =
-    Math.round(parseInt(homeThingsColumn.style.height)) + '%';
-  funPro.textContent = Math.round(parseInt(funColumn.style.height)) + '%';
+    Math.round(
+      (parseInt(homeThingsMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100
+    ) + '%';
+  funPro.textContent =
+    Math.round(
+      (parseInt(funMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100
+    ) + '%';
   anotherPro.textContent =
-    Math.round(parseInt(anotherColumn.style.height)) + '%';
+    Math.round(
+      (parseInt(anotherMoney.textContent) /
+        parseInt(finalBudgetValue.textContent)) *
+        100
+    ) + '%';
 };
 
 const suma = () => {
