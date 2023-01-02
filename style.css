@@ -14,6 +14,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  position: relative;
+  height: 100vh;
 }
 
 header {
@@ -46,6 +48,14 @@ header {
 
 .input:focus {
   outline: none;
+}
+
+.input::placeholder {
+  font-size: 2vh;
+}
+
+.budget-input::placeholder {
+  font-size: 1.8vh;
 }
 
 .button {
@@ -98,13 +108,13 @@ header {
   background-color: var(--button);
   border: none;
   border-radius: 15px;
-  font-size: 1rem;
+  font-size: 1.2vh;
   font-weight: bold;
 }
 
 .final-budget {
   display: none;
-  font-size: 2.2vw;
+  font-size: 2.8vw;
 }
 
 .final-budget-value {
@@ -153,7 +163,7 @@ header {
   background-color: var(--button);
   border: none;
   border-radius: 15px;
-  font-size: 1rem;
+  font-size: 1.2vh;
   font-weight: bold;
 }
 
@@ -236,7 +246,7 @@ input[type='number']::-webkit-inner-spin-button {
 .column-text {
   display: flex;
   justify-items: center;
-  font-size: 80%;
+  font-size: 0.6vh;
   transition: 0.4s;
   position: absolute;
   bottom: -15px;
@@ -271,7 +281,7 @@ input[type='number']::-webkit-inner-spin-button {
   border: none;
   border-radius: 15px;
   color: var(--bg);
-  font-size: 1rem;
+  font-size: 1.2vh;
   font-weight: bold;
 }
 
@@ -284,7 +294,7 @@ input[type='number']::-webkit-inner-spin-button {
   background-color: var(--button);
   border: none;
   border-radius: 15px;
-  font-size: 1rem;
+  font-size: 1.2vh;
   font-weight: bold;
 }
 
@@ -315,7 +325,7 @@ input[type='number']::-webkit-inner-spin-button {
   border: none;
   border-radius: 15px;
   color: var(--bg);
-  font-size: 1rem;
+  font-size: 1.2vh;
   font-weight: bold;
 }
 
@@ -325,4 +335,19 @@ input[type='number']::-webkit-inner-spin-button {
   display: none;
   align-items: center;
   margin-left: 2%;
+  font-size: 1.2vh;
+}
+
+/* footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  background-color: var(--core);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vh;
 }
